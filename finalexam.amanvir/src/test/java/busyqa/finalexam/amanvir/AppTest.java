@@ -1,4 +1,4 @@
-package busyqabatch4.finalexam.amanvir;
+package busyqa.finalexam.amanvir;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

@@ -7,21 +7,17 @@ import org.openqa.selenium.WebElement;
 import java.lang.*;
 import java.util.List;
 
-public class finmunwebpage {
+public class FinmunWebpage {
 
 	WebDriver driver;
-	public finmunwebpage(WebDriver driver) {
+	public FinmunWebpage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 		this.driver = driver;
 	}
 	
 	//Locator for Table2 field
 	By tabBonds = By.xpath("//*[@id=\"OBLIGATIONS_tab\"]/a");
-//	By table1 = By.xpath("//*[@id=\"report_OBLIGATIONS\"]/div/div[1]/table/tbody[2]");
-//	By table2  = By.xpath("//*[@id=\"report_OBLIGATIONS\"]/div/div[1]/table/tbody[3]");
-//	By table3  = By.xpath("//*[@id=\"report_OBLIGATIONS\"]/div/div[1]/table/tbody[4]");
-//	By table4  = By.xpath("//*[@id=\"report_OBLIGATIONS\"]/div/div[1]/table/tbody[5]");
-//	By table5  = By.xpath("//*[@id=\"report_OBLIGATIONS\"]/div/div[1]/table/tbody[6]");
+
 	
 	//Alert Close button
 	By alertCloseButton = By.cssSelector("button[title=\"Fermer\"]");
@@ -94,7 +90,8 @@ public class finmunwebpage {
 		}
 		catch(Exception e)
 		{
-			System.out.println("Exception::switchToIframe()::" + e.getMessage());
+			throw e;
+			//System.out.println("Exception::switchToIframe()::" + e.getMessage());
 		}
 		
 	}
@@ -107,7 +104,8 @@ public class finmunwebpage {
 		}
 		catch(Exception e)
 		{
-			System.out.println("Exception::switchToIframe()::" + e.getMessage());
+			throw e;
+			//System.out.println("Exception::switchToIframe()::" + e.getMessage());
 		}
 	}
 	 

@@ -2,40 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-11T21:58:42 EST" name="Default suite" finished-at="2025-02-11T22:06:50 EST" duration-ms="487506">
+  <suite started-at="2025-02-13T21:03:00 EST" name="Default suite" finished-at="2025-02-13T21:03:34 EST" duration-ms="33483">
     <groups>
     </groups>
-    <test started-at="2025-02-11T21:58:42 EST" name="Default test" finished-at="2025-02-11T22:06:50 EST" duration-ms="487506">
-      <class name="busyqa.tests.finmuntests">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:busyqa.tests.finmuntests@7bb3a9fe]" started-at="2025-02-11T21:58:42 EST" name="beforeTest" finished-at="2025-02-11T21:58:42 EST" duration-ms="17" status="PASS">
+    <test started-at="2025-02-13T21:03:00 EST" name="Default test" finished-at="2025-02-13T21:03:34 EST" duration-ms="33483">
+      <class name="busyqa.tests.FinmunTests">
+        <test-method is-config="true" signature="driverSetup()[pri:0, instance:busyqa.tests.FinmunTests@677dbd89]" started-at="2025-02-13T21:03:00 EST" name="driverSetup" finished-at="2025-02-13T21:03:07 EST" duration-ms="6775" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:busyqa.tests.finmuntests@7bb3a9fe]" started-at="2025-02-11T21:58:42 EST" name="beforeClass" finished-at="2025-02-11T21:58:50 EST" duration-ms="8068" status="PASS">
+        </test-method> <!-- driverSetup -->
+        <test-method signature="TestCopyWebtablesToExcelFile()[pri:0, instance:busyqa.tests.FinmunTests@677dbd89]" started-at="2025-02-13T21:03:07 EST" name="TestCopyWebtablesToExcelFile" finished-at="2025-02-13T21:03:33 EST" duration-ms="25675" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:busyqa.tests.finmuntests@7bb3a9fe]" started-at="2025-02-11T21:58:50 EST" name="beforeMethod" finished-at="2025-02-11T21:58:50 EST" duration-ms="1" status="PASS">
+        </test-method> <!-- TestCopyWebtablesToExcelFile -->
+        <test-method is-config="true" signature="closeMethod()[pri:0, instance:busyqa.tests.FinmunTests@677dbd89]" started-at="2025-02-13T21:03:33 EST" name="closeMethod" finished-at="2025-02-13T21:03:34 EST" duration-ms="968" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="Test1()[pri:0, instance:busyqa.tests.finmuntests@7bb3a9fe]" started-at="2025-02-11T21:58:50 EST" name="Test1" finished-at="2025-02-11T22:06:49 EST" duration-ms="478658" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test1 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:busyqa.tests.finmuntests@7bb3a9fe]" started-at="2025-02-11T22:06:49 EST" name="afterMethod" finished-at="2025-02-11T22:06:49 EST" duration-ms="6" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:busyqa.tests.finmuntests@7bb3a9fe]" started-at="2025-02-11T22:06:49 EST" name="afterClass" finished-at="2025-02-11T22:06:50 EST" duration-ms="667" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:busyqa.tests.finmuntests@7bb3a9fe]" started-at="2025-02-11T22:06:50 EST" name="afterTest" finished-at="2025-02-11T22:06:50 EST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- busyqa.tests.finmuntests -->
+        </test-method> <!-- closeMethod -->
+      </class> <!-- busyqa.tests.FinmunTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

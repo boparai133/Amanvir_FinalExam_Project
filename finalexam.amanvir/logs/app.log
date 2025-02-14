@@ -1,0 +1,84 @@
+2025-02-13 21:23:47,364 DEBUG b.t.FinmunTests [main] Begin initializer()
+2025-02-13 21:23:48,102 DEBUG b.t.FinmunTests [main] End initializer()
+2025-02-13 21:23:58,485 DEBUG b.t.FinmunTests [main] "Test method::"+ methodName
+2025-02-13 21:23:58,538 DEBUG b.t.FinmunTests [main] Starting test TestCopyWebtablesToExcelFile()
+2025-02-13 21:23:58,541 DEBUG b.t.FinmunTests [main] TestCopyWebtablesToExcelFile(): Webdriver Initialized
+2025-02-13 21:23:58,905 DEBUG b.t.FinmunTests [main] Clicked on Tab :: Results for the last 90 days - Bonds
+2025-02-13 21:32:55,357 DEBUG b.t.FinmunTests [main] Begin initializer()
+2025-02-13 21:32:56,116 DEBUG b.t.FinmunTests [main] End initializer()
+2025-02-13 21:33:05,255 DEBUG b.t.FinmunTests [main] Test method::TestCopyWebtablesToExcelFile
+2025-02-13 21:33:05,315 DEBUG b.t.FinmunTests [main] Starting test TestCopyWebtablesToExcelFile()
+2025-02-13 21:33:05,317 DEBUG b.t.FinmunTests [main] TestCopyWebtablesToExcelFile(): Webdriver Initialized
+2025-02-13 21:33:05,558 DEBUG b.t.FinmunTests [main] Clicked on Tab :: Results for the last 90 days - Bonds
+2025-02-13 21:33:07,604 DEBUG b.t.FinmunTests [main] Started reading of webtable [1]
+2025-02-13 21:33:07,622 DEBUG b.t.FinmunTests [main] Number of rows in the table= 3
+2025-02-13 21:33:10,645 DEBUG b.t.FinmunTests [main] Loop through first column with <a> tag: 	
+2025-02-13 21:33:10,686 DEBUG b.t.FinmunTests [main] Capturing screen shot of main page
+2025-02-13 21:33:14,079 DEBUG b.t.FinmunTests [main] Capturing screen shot of detail page of Saint-Adolphe-d'Howard
+2025-02-13 21:33:30,978 ERROR b.t.FinmunTests [main] Excel file with all the sheets saved
+2025-02-13 21:33:31,004 DEBUG b.t.FinmunTests [main] Started reading of webtable [2]
+2025-02-13 21:33:31,017 DEBUG b.t.FinmunTests [main] Number of rows in the table= 7
+2025-02-13 21:33:34,044 DEBUG b.t.FinmunTests [main] Loop through first column with <a> tag: 	
+2025-02-13 21:33:34,067 DEBUG b.t.FinmunTests [main] Capturing screen shot of main page
+2025-02-13 21:33:37,341 DEBUG b.t.FinmunTests [main] Capturing screen shot of detail page of Cantley
+2025-02-13 21:33:53,493 DEBUG b.t.FinmunTests [main] Loop through first column with <a> tag: 	
+2025-02-13 21:33:53,514 DEBUG b.t.FinmunTests [main] Capturing screen shot of main page
+2025-02-13 21:33:56,806 DEBUG b.t.FinmunTests [main] Capturing screen shot of detail page of Delson
+2025-02-13 21:34:13,115 DEBUG b.t.FinmunTests [main] Loop through first column with <a> tag: 	
+2025-02-13 21:34:13,139 DEBUG b.t.FinmunTests [main] Capturing screen shot of main page
+2025-02-13 21:34:16,416 DEBUG b.t.FinmunTests [main] Capturing screen shot of detail page of Lachute
+2025-02-13 21:34:32,621 DEBUG b.t.FinmunTests [main] Loop through first column with <a> tag: 	
+2025-02-13 21:34:32,643 DEBUG b.t.FinmunTests [main] Capturing screen shot of main page
+2025-02-13 21:34:35,942 DEBUG b.t.FinmunTests [main] Capturing screen shot of detail page of Régie de l'eau de L'Île-Perrot
+2025-02-13 21:34:52,124 DEBUG b.t.FinmunTests [main] Loop through first column with <a> tag: 	
+2025-02-13 21:34:52,147 DEBUG b.t.FinmunTests [main] Capturing screen shot of main page
+2025-02-13 21:34:55,416 DEBUG b.t.FinmunTests [main] Capturing screen shot of detail page of Sainte-Anne-des-Plaines
+2025-02-13 21:35:11,611 ERROR b.t.FinmunTests [main] Excel file with all the sheets saved
+2025-02-13 21:35:11,631 DEBUG b.t.FinmunTests [main] Started reading of webtable [3]
+2025-02-13 21:35:11,643 DEBUG b.t.FinmunTests [main] Number of rows in the table= 7
+2025-02-13 21:35:14,672 DEBUG b.t.FinmunTests [main] Loop through first column with <a> tag: 	
+2025-02-13 21:35:14,694 DEBUG b.t.FinmunTests [main] Capturing screen shot of main page
+2025-02-13 21:35:17,972 DEBUG b.t.FinmunTests [main] Capturing screen shot of detail page of Adstock
+2025-02-13 21:35:34,167 DEBUG b.t.FinmunTests [main] Loop through first column with <a> tag: 	
+2025-02-13 21:35:34,189 DEBUG b.t.FinmunTests [main] Capturing screen shot of main page
+2025-02-13 21:35:37,461 DEBUG b.t.FinmunTests [main] Capturing screen shot of detail page of Lévis
+2025-02-13 21:35:53,594 DEBUG b.t.FinmunTests [main] Loop through first column with <a> tag: 	
+2025-02-13 21:35:53,616 DEBUG b.t.FinmunTests [main] Capturing screen shot of main page
+2025-02-13 21:35:56,922 DEBUG b.t.FinmunTests [main] Capturing screen shot of detail page of Pohénégamook
+2025-02-13 21:36:13,244 DEBUG b.t.FinmunTests [main] Loop through first column with <a> tag: 	
+2025-02-13 21:36:13,268 DEBUG b.t.FinmunTests [main] Capturing screen shot of main page
+2025-02-13 21:36:16,518 DEBUG b.t.FinmunTests [main] Capturing screen shot of detail page of Portneuf
+2025-02-13 21:36:32,603 DEBUG b.t.FinmunTests [main] Loop through first column with <a> tag: 	
+2025-02-13 21:36:32,628 DEBUG b.t.FinmunTests [main] Capturing screen shot of main page
+2025-02-13 21:36:35,925 DEBUG b.t.FinmunTests [main] Capturing screen shot of detail page of Saint-Georges
+2025-02-13 21:36:52,151 ERROR b.t.FinmunTests [main] Excel file with all the sheets saved
+2025-02-13 21:36:52,208 DEBUG b.t.FinmunTests [main] Started reading of webtable [4]
+2025-02-13 21:36:52,223 DEBUG b.t.FinmunTests [main] Number of rows in the table= 7
+2025-02-13 21:36:55,261 DEBUG b.t.FinmunTests [main] Loop through first column with <a> tag: 	
+2025-02-13 21:36:55,283 DEBUG b.t.FinmunTests [main] Capturing screen shot of main page
+2025-02-13 21:36:58,601 DEBUG b.t.FinmunTests [main] Capturing screen shot of detail page of Maria
+2025-02-13 21:37:14,709 DEBUG b.t.FinmunTests [main] Loop through first column with <a> tag: 	
+2025-02-13 21:37:14,731 DEBUG b.t.FinmunTests [main] Capturing screen shot of main page
+2025-02-13 21:37:17,989 DEBUG b.t.FinmunTests [main] Capturing screen shot of detail page of Richelieu
+2025-02-13 21:37:34,117 DEBUG b.t.FinmunTests [main] Loop through first column with <a> tag: 	
+2025-02-13 21:37:34,147 DEBUG b.t.FinmunTests [main] Capturing screen shot of main page
+2025-02-13 21:37:37,429 DEBUG b.t.FinmunTests [main] Capturing screen shot of detail page of Saint-Janvier-de-Joly
+2025-02-13 21:37:53,579 DEBUG b.t.FinmunTests [main] Loop through first column with <a> tag: 	
+2025-02-13 21:37:53,615 DEBUG b.t.FinmunTests [main] Capturing screen shot of main page
+2025-02-13 21:37:56,896 DEBUG b.t.FinmunTests [main] Capturing screen shot of detail page of Saint-Liguori
+2025-02-13 21:38:12,978 DEBUG b.t.FinmunTests [main] Loop through first column with <a> tag: 	
+2025-02-13 21:38:13,001 DEBUG b.t.FinmunTests [main] Capturing screen shot of main page
+2025-02-13 21:38:16,277 DEBUG b.t.FinmunTests [main] Capturing screen shot of detail page of Stratford
+2025-02-13 21:38:32,387 ERROR b.t.FinmunTests [main] Excel file with all the sheets saved
+2025-02-13 21:38:32,413 DEBUG b.t.FinmunTests [main] Started reading of webtable [5]
+2025-02-13 21:38:32,426 DEBUG b.t.FinmunTests [main] Number of rows in the table= 5
+2025-02-13 21:38:35,450 DEBUG b.t.FinmunTests [main] Loop through first column with <a> tag: 	
+2025-02-13 21:38:35,468 DEBUG b.t.FinmunTests [main] Capturing screen shot of main page
+2025-02-13 21:38:38,789 DEBUG b.t.FinmunTests [main] Capturing screen shot of detail page of Boischatel
+2025-02-13 21:38:54,918 DEBUG b.t.FinmunTests [main] Loop through first column with <a> tag: 	
+2025-02-13 21:38:54,939 DEBUG b.t.FinmunTests [main] Capturing screen shot of main page
+2025-02-13 21:38:58,219 DEBUG b.t.FinmunTests [main] Capturing screen shot of detail page of Sainte-Brigitte-de-Laval
+2025-02-13 21:39:14,325 DEBUG b.t.FinmunTests [main] Loop through first column with <a> tag: 	
+2025-02-13 21:39:14,354 DEBUG b.t.FinmunTests [main] Capturing screen shot of main page
+2025-02-13 21:39:17,638 DEBUG b.t.FinmunTests [main] Capturing screen shot of detail page of Saint-Philippe
+2025-02-13 21:39:33,829 ERROR b.t.FinmunTests [main] Excel file with all the sheets saved
