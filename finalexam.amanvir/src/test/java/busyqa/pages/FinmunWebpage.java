@@ -3,42 +3,28 @@ package busyqa.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-import java.lang.*;
-import java.util.List;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class FinmunWebpage {
 
 	WebDriver driver;
-	public FinmunWebpage(WebDriver driver) {
-		// TODO Auto-generated constructor stub
+	public FinmunWebpage(WebDriver driver) {		
 		this.driver = driver;
+		PageFactory.initElements(driver,this);
 	}
 	
-	//Locator for Table2 field
-	By tabBonds = By.xpath("//*[@id=\"OBLIGATIONS_tab\"]/a");
-
-	
-	//Alert Close button
-	By alertCloseButton = By.cssSelector("button[title=\"Fermer\"]");
-	
-	//Pop up Table locator	
-	By popupTable = By.xpath("//*[@id=\"R1469412186955323305\"]/div[2]/div[2]/table[2]");
-	
-	//find iframe
-	By ifrm = By.tagName("iframe");
+	@FindBy(xpath = "//*[@id='OBLIGATIONS_tab']/a") WebElement tabBonds;
+	@FindBy(css = "button[title='Fermer']") WebElement alertCloseButton;
+	@FindBy(xpath = "//*[@id='R1469412186955323305']/div[2]/div[2]/table[2]") WebElement popupTable;
+	@FindBy(tagName = "iframe") WebElement ifrm;
 		
-	//Method to return tab bonds
-	public WebElement  getTabBonds() {
-		return driver.findElement(tabBonds);
-	}
-	
 	//Method to click on Bonds Tab
-	public void clickTabBonds() {
-		driver.findElement(tabBonds).click();		
+	public void clickTabBonds() {		
+		tabBonds.click();
 	}	
 	
-	//Method to read web page table
+	//Method to read main page table 
 	public WebElement getTable(int tableNumber) {
 		By webelement=null;
 		try
@@ -54,48 +40,30 @@ public class FinmunWebpage {
 	 
 	//Method to close the pop up window
 	public void closeAlert()
-	{
-		driver.findElement(alertCloseButton).click();
+	{		
+		alertCloseButton.click();
 	}
-	
-	//Method to click on Bonds Tab
-	public WebElement getPopupTable1() {		
-		By webelement=null;
-		try
-		{
-			 webelement = By.xpath("//*[@id=\"R1469412186955323305\"]/div[2]/div[2]/table[2]");
-		}
-		catch(Exception e)
-		{
-			throw e;
-		}
-		return driver.findElement(webelement);
-	}
-	
+		
 	//Method to click on Bonds Tab
 	public WebElement getPopupTable() {		 
-		return driver.findElement(popupTable);
+		return popupTable;
 	}
-	
-	//Method to return tab bonds
-	public WebElement  getChildiFrame() {
-		return driver.findElement(ifrm);
-	}
-	
+			
+	//Method to switch to child frame
 	public void switchToIframe() {
 		try
 		{
-		driver.switchTo().frame(getChildiFrame());
-		System.out.println("switchToIframe()");
+		driver.switchTo().frame(ifrm);	
+		System.out.println("switchToChildIframe()");
 		}
 		catch(Exception e)
 		{
-			throw e;
-			//System.out.println("Exception::switchToIframe()::" + e.getMessage());
+			throw e;			
 		}
 		
 	}
 	
+	//Method to switch to Main content
 	public void switchToMainContent() {
 		try
 		{
@@ -104,8 +72,7 @@ public class FinmunWebpage {
 		}
 		catch(Exception e)
 		{
-			throw e;
-			//System.out.println("Exception::switchToIframe()::" + e.getMessage());
+			throw e;			
 		}
 	}
 	 

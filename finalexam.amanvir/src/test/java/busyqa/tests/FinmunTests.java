@@ -11,10 +11,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import busyqa.pages.FinmunWebpage;
 import junit.framework.Assert;
 
-
 import java.util.List;
-
-
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -47,6 +44,10 @@ import java.time.Duration;
 
 public class FinmunTests {
 	
+	
+	FinmunWebpage objFinmunPage;
+	
+	//Initialization of L4j2 logger
 	private static final Logger logger = LogManager.getLogger(FinmunTests.class);
 	
 	public static ExtentSparkReporter sparkReporter;
@@ -57,7 +58,8 @@ public class FinmunTests {
 	XSSFWorkbook workbook = new XSSFWorkbook();
 	
 	public void initializer() {	
-		logger.debug("Begin initializer()");
+		logger.debug("============================================================================");
+		logger.debug("Test initializer()");
 		//sparkReporter = new ExtentSparkReporter("./test-output/ExtentReport.html");
 		sparkReporter =  new ExtentSparkReporter(System.getProperty("user.dir")+"/Reports/extentSparkReport.html");
 		sparkReporter.config().setDocumentTitle("Automation Report");
@@ -65,8 +67,7 @@ public class FinmunTests {
 		sparkReporter.config().setTheme(Theme.STANDARD);
 		sparkReporter.config().setTimeStampFormat("yyyy-MM-dd HH:mm:ss");
 		extent = new ExtentReports();
-		extent.attachReporter(sparkReporter);			
-		logger.debug("End initializer()");
+		extent.attachReporter(sparkReporter);	
 	}
 	public String CaptureScreenShot(WebDriver driver, String name, String fName) throws IOException {
 		  String FileSeparator = System.getProperty("file.separator"); // "/" or "\"
@@ -78,13 +79,10 @@ public class FinmunTests {
 		  String fPath = Dst.getAbsolutePath();
 		  return fPath;
 		  }
-	  
-  
-	  
+		  
 	public void CreateExcelSheet(WebElement dt1, String name)  {
 		   
 			XSSFSheet sheet = workbook.createSheet(name);
-
 					
 			//Read all the rows of the web table
 			List<WebElement> rows = dt1.findElements(By.tagName("tr"));
@@ -103,32 +101,32 @@ public class FinmunTests {
 			          
 			          // Iterate through columns and print data
 			          try {
-			          for (int j = 0; j < columns.size(); j++) {		        	 
-			        	  	//xRow.createCell(j).setCellValue(columns.get(j).getText()); //working line of code
+			          for (int j = 0; j < columns.size(); j++) {	        	 
+			        	  	
+			        	  	//Create new cell in xRow
 			        	  	XSSFCell cell = xRow.createCell(j);			        	  	
 			        	  	cell.setCellValue(columns.get(j).getText());			        	  	
 			        	  	
+			        	  	//Add styles to cell similar to web page table
 			        	  	CellStyle cellStyle = workbook.createCellStyle();			        	  		
 		        	  		cellStyle.setAlignment(HorizontalAlignment.CENTER);		        	  		
 		        	  		cell.setCellStyle(cellStyle);
-		        	  		
-		        	  		
+		        	  				        	  		
 			        	  	String colSpan = columns.get(j).getDomAttribute("colspan");
 			        	  	System.out.print("td colspan value: "+ colSpan);			        	  	
 			        	  	if(colSpan != null)
 			        	  	{
 			        	  		int colsp = Integer.parseInt(colSpan);
-			        	  		setMerge(sheet,i,i,j,colsp,true);
-			        	  		
-			        	  	}
-			        	  				        	  				        	  	
+			        	  		setMerge(sheet,i,i,j,colsp,true);			        	  		
+			        	  	}			        	  				        	  				        	  	
 			        	  	setBordersToAllCells(sheet,i,i,j,j);			        	  	
 			        	 }		
 			          }
 			          catch (Exception e) {
-		        	  	test.log(Status.FAIL,"Failed at WriteToExcelFile(WebElement dt1, String name)");
+		        	  	test.log(Status.FAIL,"Failed at WriteToExcelFile(WebElement dt1, String name)"+e.getMessage());
+		        	  	logger.error("Failed at WriteToExcelFile(WebElement dt1, String name)"+e.getMessage());		        	  	
+		        	  	System.out.println("Exception at: WriteToExcelFile(WebElement dt1, String name):"+ e.getMessage());
 		        	  	Assert.fail();
-		        	  	System.out.println("Exception at: WriteToExcelFile(WebElement dt1, String name):"+ e.getMessage());	
 			          }
 			          
 			      System.out.println(); // Move to the next row
@@ -158,8 +156,7 @@ public class FinmunTests {
 	    RegionUtil.setBorderBottom(BorderStyle.DOUBLE, rangeAddress, sheet);
 	}
 
-	public void SaveExcelToFileSystem() throws IOException
-	  {
+	public void SaveExcelToFileSystem() throws IOException {
 		  String FileSeparator = System.getProperty("file.separator"); // "/" or "\"
 		  String Excel_File_path = "."+FileSeparator+"ExcelFiles"; // . means parent directory
 		  String fname = "WinningTender.xlsx";	  
@@ -175,14 +172,14 @@ public class FinmunTests {
 			  out.close();
 			  System.out.println("WinningTender.xlsx written successfully on disk.");		  
 			} 
-			catch (Exception e) {			 
-				 test.log(Status.FAIL,"Failed at SaveExcelToFileSystem()");
+		catch (Exception e) {			 
+				 test.log(Status.FAIL,"Failed at SaveExcelToFileSystem()"+e.getMessage());
+				 logger.error("Failed at SaveExcelToFileSystem()"+e.getMessage());				 
+				 System.out.println("Exception::"+ e.getMessage());			 		
 				 Assert.fail();
-				 System.out.println("Exception::"+ e.getMessage());			 		  
-			  	}
+		  	}
 	  }
-	  
-	 
+	  	 
 	
 	  @Test(enabled = true)
 	  public void TestCopyWebtablesToExcelFile() throws IOException, InterruptedException{
@@ -198,22 +195,21 @@ public class FinmunTests {
 		  logger.debug("Starting test TestCopyWebtablesToExcelFile()");
 		  
 		  System.out.println("This is TestCopyWebtablesToExcelFile()");		  
-		  FinmunWebpage finmunPage = new FinmunWebpage(driver);
+		  objFinmunPage = new FinmunWebpage(driver);
 		  test.log(Status.INFO, "TestCopyWebtablesToExcelFile(): Webdriver Initialized");
 		  logger.debug("TestCopyWebtablesToExcelFile(): Webdriver Initialized");
 		  
 		  ///Click on Bond Results Tab
-		  finmunPage.clickTabBonds();
+		  objFinmunPage.clickTabBonds();
 		  test.log(Status.INFO, "Clicked on Tab :: Results for the last 90 days - Bonds");
 		  logger.debug("Clicked on Tab :: Results for the last 90 days - Bonds");
 		  Thread.sleep(2000);
 		  
-		  
-		  
+		    
 		  for(int t=1;t<=noOfTables;t++)
 		  {
-			  //Read the table
-			  WebElement dt = finmunPage.getTable(t);
+			  //Read the table [t] on main page
+			  WebElement dt = objFinmunPage.getTable(t);
 			  test.log(Status.INFO, String.format("Started reading of webtable [%d]", t));
 			  logger.debug(String.format("Started reading of webtable [%d]", t));
 			  System.out.println("\r Table : "+ t );
@@ -229,8 +225,7 @@ public class FinmunTests {
 			  	for (int i = 0; i < rows.size()-2; i++) {
 			          WebElement row = rows.get(i);
 			          
-			          //Find column with <a> tag in the row
-			          
+			          //Find column with <a> tag in the row			          
 			          List<WebElement> columns = row.findElements(By.xpath("td/a"));
 			          System.out.print("Loop through first column with <a> tag: \t");
 			          logger.debug("Loop through first column with <a> tag: \t");
@@ -253,15 +248,15 @@ public class FinmunTests {
 				        	  logger.debug("Capturing screen shot of detail page of "+ name);	
 				        	  test.addScreenCaptureFromPath(CaptureScreenShot(driver,name,"PopupWindow")); //Step c
 				        	  
-				        	  finmunPage.switchToIframe();
-				        	  Thread.sleep(3000);
+				        	  Thread.sleep(2000);
 				        	  
+				        	  logger.debug("switch child Iframe inside popup window");
+				        	  objFinmunPage.switchToIframe();				        	  
+				        	  				        	  
+				        	  WebElement popDT = objFinmunPage.getPopupTable();
 				        	  
-				        	  WebElement popDT = finmunPage.getPopupTable();
-				        	  
-				        	  Thread.sleep(3000);  
-				        	  //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-				        	  
+				        	  Thread.sleep(3000); 
+				        	  				        	  
 				        	  //Read all the rows of the web table
 				  			  List<WebElement> rows1 = popDT.findElements(By.tagName("tr"));
 				  			
@@ -273,18 +268,18 @@ public class FinmunTests {
 				  		      CreateExcelSheet(popDT, name);
 				        	  Thread.sleep(2000);
 				        	  				  		      
-				        	  finmunPage.switchToMainContent();
+				        	  objFinmunPage.switchToMainContent();
 				        	  Thread.sleep(2000);
 				        	  
 				        	  test.log(Status.INFO,"Detailed table of "+ name +" closed");
-				        	  finmunPage.closeAlert();				        	         	  
+				        	  objFinmunPage.closeAlert();				        	         	  
 				        	  Thread.sleep(2000);
 				        	  
 				          }		
 			          }
 			          catch (Exception e) {
-		        	  		test.log(Status.FAIL,"Exception block: Failed at TestCopyWebtablesToExcelFile()");
-		        	  		logger.error("Exception block: Failed at TestCopyWebtablesToExcelFile()");
+		        	  		test.log(Status.FAIL,"Exception block: Failed at TestCopyWebtablesToExcelFile()"+ e.getMessage());
+		        	  		logger.error("Exception block: Failed at TestCopyWebtablesToExcelFile()"+ e.getMessage());
 			        	  	Assert.fail();
 			        	  	System.out.println("Exception block: TestCopyWebtablesToExcelFile():"+ e.getMessage());	
 						}
@@ -301,7 +296,8 @@ public class FinmunTests {
  
 	  @BeforeTest
 	  public void driverSetup() {
-		  System.out.println("This is @BeforeTest method driverSetup()");	  
+		  System.out.println("This is @BeforeTest - driverSetup()");	
+		  logger.info("This is @BeforeTest - driverSetup()");
 		  initializer();	   
 		  driver = new ChromeDriver();
 		  driver.get("https://www.finmun.finances.gouv.qc.ca/finmun/f?p=100:3003::RESLT:");	  	  	   
@@ -310,8 +306,10 @@ public class FinmunTests {
 	  }
 	  @AfterTest
 	  public void closeMethod() {
-		  System.out.println("This is @afterTest method closeMethod()");  
+		  System.out.println("This is @afterTest - closeMethod()");
+		  logger.info("This is @afterTest - closeMethod()");
 		  extent.flush();
 		  driver.quit();
 	  }
  }
+
