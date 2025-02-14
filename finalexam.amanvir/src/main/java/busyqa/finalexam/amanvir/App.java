@@ -1,4 +1,4 @@
-package busyqabatch4.finalexam.amanvir;
+package busyqa.finalexam.amanvir;
 
 /**
  * Hello world!
