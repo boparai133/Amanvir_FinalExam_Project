@@ -220,7 +220,7 @@ public class FinmunTests {
 		      System.out.println("Number of rows in the table= " + rows.size());	
 		      logger.debug("Number of rows in the table= " + rows.size());
 			  Thread.sleep(3000);
-			  
+			  String name = "";
 				// Iterate through all the rows in table and print data.
 			  	for (int i = 0; i < rows.size()-2; i++) {
 			          WebElement row = rows.get(i);
@@ -237,12 +237,14 @@ public class FinmunTests {
 				        	  //System.out.print(columns.get(j).findElement(By.tagName("a")).getDomAttribute("href") + "\t");
 				        	  WebElement aLink = columns.get(j);
 				        	  System.out.print(aLink.getText() + "\t");				        	  
-				        	  String name = aLink.getText();			
+				        	  name = aLink.getText();			
 				        	  
 				        	  logger.debug("Capturing screen shot of main page");			        	  
 				        	  test.addScreenCaptureFromPath(CaptureScreenShot(driver,name,"MainPage")); //Step a
+				        	  
+				        	  Thread.sleep(2000);
 				        	  aLink.click();
-				        	  Thread.sleep(3000);
+				        	  Thread.sleep(5000);
 				        	  
 				        	  
 				        	  logger.debug("Capturing screen shot of detail page of "+ name);	
@@ -280,16 +282,17 @@ public class FinmunTests {
 			          catch (Exception e) {
 		        	  		test.log(Status.FAIL,"Exception block: Failed at TestCopyWebtablesToExcelFile()"+ e.getMessage());
 		        	  		logger.error("Exception block: Failed at TestCopyWebtablesToExcelFile()"+ e.getMessage());
+		        	  		System.out.println("Exception block: TestCopyWebtablesToExcelFile():"+ e.getMessage());
 			        	  	Assert.fail();
-			        	  	System.out.println("Exception block: TestCopyWebtablesToExcelFile():"+ e.getMessage());	
+			        	  		
 						}
 			          
 			      System.out.println(); // Move to the next row
 			  	}
 			   
 			  		SaveExcelToFileSystem();
-			  		test.log(Status.INFO,"Excel file with all the sheets saved");
-			  		logger.debug("Excel file with all the sheets saved");
+			  		test.log(Status.INFO,"All the sheets of table ["+ t +"] saved in excel file");
+			  		logger.debug("All the sheets of table ["+ t +"] saved in excel file");
 		 }	 
 		  
   	}	  
